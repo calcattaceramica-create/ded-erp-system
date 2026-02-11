@@ -6,7 +6,7 @@ services:
     region: frankfurt
     plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 run:app"
+    startCommand: "gunicorn --bind 0.0.0.0:$PORT --workers 4 --timeout 120 --log-level info run:app"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
